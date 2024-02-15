@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24; //First specify the version of solidity
 
 //Steps to start..
-//Add an SPDX-License-Identifier: {}
+//Add an 
 //Specify the version of solidity...using pragma solidity
 // Specify contract...This is a form of class in object oriented programming
 //A contract is a form of class...
@@ -40,7 +40,7 @@ contract SimpleStorage{
         uint favortieNum;
         string name;
     }
-    //type, modifier, and name
+    //type, modifier, and name for variables...for functions..type name modifier
     People[] public people; //Dynamic array because the size isn't given
 
 
@@ -57,7 +57,7 @@ function addPerson(string memory _name, uint _favoriteNum) public {
  //People memory addNewPerson = People({favortieNum: _favoriteNum, name:_name});  //just like destructuring in javascript
  //people.push(addNewPerson);
 }
-    function storeFunction(uint256 _favoriteNumber) public {
+    function storeFunction(uint256 _favoriteNumber) public virtual  {
         favortieNum = _favoriteNumber;
        
     } 
@@ -69,5 +69,9 @@ function addPerson(string memory _name, uint _favoriteNum) public {
         return favortieNum;   
     }
 
-   
+   function returnPerson(uint256 _index) public  view returns (People memory){
+    People memory peopleNew = people[_index];
+    return peopleNew;
+
+   }
 }
