@@ -37,9 +37,9 @@ function addPerson(uint256 _storageIndex, string memory _name, uint256 _favorite
 
 
 
-function returnPerson(uint256 _storageIndex) public  view returns (SimpleStorage.People memory){
+function returnPerson(uint256 _storageIndex , uint256 _personIndex) public  view returns (SimpleStorage.People memory){
  SimpleStorage simpleStorage = simpleStorageArray[_storageIndex];
- return simpleStorage.returnPerson(_storageIndex);
+ return simpleStorage.returnPerson(_personIndex);
 }
 
 
